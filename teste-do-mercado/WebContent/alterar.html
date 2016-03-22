@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Teste Mercadoria</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<style>
+* {
+	margin: 0px;
+	margin-top: 0px;
+}
+
+body {
+	font: bold 0.95em arial, sans-serif;
+	background: #eeeeee;
+}
+
+.campo {
+	padding: 0.15em;
+	width: 10em;
+	border: 1px solid #ddd;
+	background: #fafafa;
+	font: bold 0.95em arial, sans-serif;
+	-moz-border-radius: 0.4em;
+	-khtml-border-radius: 0.4em;
+	border-radius: 7px;
+}
+
+header {
+	background-color: #4775FF;
+	color: black;
+	text-align: center;
+	padding: 25px;
+	font: bold 0.95em arial, sans-serif;
+}
+
+.topo {
+	background-color: #4775FF;
+	color: white;
+	text-align: center;
+	padding: 5px;
+	font: bold 0.95em arial, sans-serif;
+}
+
+#rcorners2 {
+	border-radius: 15px;
+	width: 350px;
+	height: 395px;
+	background: #C7C7C7;
+	padding: 1em;
+	color: black;
+	font: bold 0.95em arial, sans-serif;
+	border-bottom-color: #CBCBCB;
+}
+
+.botao {
+	padding: 0.25em;
+	width: 11em;
+	border: 1px solid #ddd;
+	background: grey;
+	-moz-border-radius: 0.4em;
+	-khtml-border-radius: 0.4em;
+	font: bold 0.95em arial, sans-serif;
+	border-radius: 7px;
+}
+
+button {
+	padding: 0.25em;
+	width: 11em;
+	border: 1px solid #ddd;
+	font: bold 0.95em arial, sans-serif;
+	background: grey;
+	border-radius: 7px;
+	text-align: center;
+}
+
+input:hover, input:focus {
+	border-color: #A9BFFF;
+	background: #A6BCFF;
+}
+
+button:hover, button:focus {
+	border-color: #A9BFFF;
+	background: #85A3FF;
+}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="titulo">Mercadorias</h1>
+	</header>
+	<br>
+	<br>
+	<br>
+	<br>
+	<center>
+		<form id="rcorners2" action="ManterMercadoria.do" method="post" name="login"
+			onsubmit="return validaCadastro()">
+			</br> <br>
+			<br>
+			<div
+				style="position: absolute; right: 45%; top: 75%; color: red; font-size: 15px; display: none"
+				id="msgErro">Login ou senha invalidos</div>
+
+			<div id="telaLogon" style="text-align: left">
+				<h3 style="text-align: center">Alterar Mercadorias</h3>
+				<br>
+				<br> Código da Mercadoria: <input class="campo"
+					style="width: 150px;" onclick="apagaMessage()" type="text"
+					name="codigo" id="idCodigo"> <br>
+				<br> Tipo de Mercadoria: <input class="campo" type="text"
+					style="width: 170px;" onclick="apagaMessage()" name="tipoMerc"
+					id="idTipoMerc"> <br>
+				<br> Nome da Mercadoria: <input class="campo" type="text"
+					style="width: 160px;" onclick="apagaMessage()" name="nome"
+					id="idNome"> <br>
+				<br> Quantidade: <input class="campo" type="text"
+					style="width: 220px;" onclick="apagaMessage()" name="quantidade"
+					id="idQuantidade"> <br>
+				<br> Preço: <input class="campo" type="text"
+					style="width: 260px;" onclick="apagaMessage()" name="preco"
+					id="idPreco"> <br>
+				<br> Tipo do Negócio: <input class="campo" type="text"
+					style="width: 185px;" onclick="apagaMessage()" name="tipoNegocio"
+					id="idTipoNegocio"> <br>
+				<br>
+				<br>
+				<br>
+				<br>
+
+				<div style="text-align: center">
+					<input class="botao" type="submit" onclick="apagaMessage()"
+						value="Alterar" name="manterMaterial">
+				</div>
+				<br>
+				<br>
+
+			</div>
+		</form>
+	</center>
+	<script>
+		function validaCadastro() {
+
+			if (idCodigo.value == "") {
+				$("#msgErro").show();
+				return false;
+			} else {
+				window.location.href = "menu.html";
+				return false;
+			}
+		}
+		function apagaMessage() {
+
+			$("#msgErro").hide();
+
+		}
+	</script>
+</body>
+</html>
